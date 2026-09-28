@@ -1,0 +1,125 @@
+# DOCUMENTATION: https://docs.artillex-studios.com/axtrade.html
+# Traducción y diseño de mensajes estilo Minijuegos.yml
+
+player-help:
+- '&f'
+- '&fTrade ▸ &aAyuda &f(&e✔&f)'
+- '&8Información'
+- '&f'
+- ' &f/trade <jugador> &7- Enviar solicitud'
+- ' &f/trade accept <jugador> &7- Aceptar solicitud'
+- ' &f/trade deny <jugador> &7- Rechazar solicitud'
+- ' &f/trade toggle &7- Activar/desactivar solicitudes'
+- '&f'
+- ' &7▲ Sistema de intercambios'
+- '&f'
+
+admin-help:
+- '&f'
+- '&fTrade ▸ &aAyuda Administrativa &f(&e✔&f)'
+- '&8Información'
+- '&f'
+- ' &f/trade <jugador> &7- Enviar solicitud'
+- ' &f/trade accept <jugador> &7- Aceptar solicitud'
+- ' &f/trade deny <jugador> &7- Rechazar solicitud'
+- ' &f/trade toggle &7- Activar/desactivar solicitudes'
+- ' &f/axtrade reload &7- Recargar plugin'
+- ' &f/axtrade force <jugador> &7- Forzar intercambio'
+- ' &f/axtrade preview &7- Probar la interfaz'
+- '&f'
+- ' &7▲ Comandos administrativos'
+- '&f'
+
+reload:
+  success: '&a✔ &fLa configuración de AxTrade se recargó correctamente.'
+  failed: '&c✘ &fNo se pudo recargar. Revisa el archivo &c%file% &fy la consola.'
+
+trade:
+  started: '&fHas iniciado un intercambio con &a%player%&f.'
+  completed: '&a✔ &fTu intercambio con &a%player% &fse completó correctamente.'
+  aborted: '&c✘ &fEl intercambio con &c%player% &ffue cancelado.'
+  blacklisted-item: '&c✘ &fEste objeto no puede ser intercambiado.'
+  inventory-full: '&c✘ &fNo puedes añadir más objetos porque el inventario del otro jugador no tiene espacio.'
+  preview-info: '&e⚠ &fHas abierto la vista previa de la GUI. Es solo para probar la configuración; algunos botones pueden no funcionar.'
+
+toggle:
+  enabled: '&a✔ &fAhora puedes recibir solicitudes de intercambio.'
+  disabled: '&c✘ &fYa no recibirás solicitudes de intercambio.'
+
+# resumen después de un intercambio exitoso
+summary:
+  get:
+    item: '&a+ &f%amount%x &a%item%'
+    currency: '&a+ &f%amount% &a%currency%'
+  give:
+    item: '&c- &f%amount%x &c%item%'
+    currency: '&c- &f%amount% &c%currency%'
+
+currency-editor:
+  success: '&a✔ &fCantidad actualizada correctamente.'
+  failed: '&c✘ &fLa cantidad ingresada no es válida.'
+  not-enough: '&c✘ &fNo tienes suficiente saldo de esta moneda.'
+
+request:
+  sent-sender: '&a✔ &fEnviaste una solicitud de intercambio a &a%player%&f.'
+  sent-receiver:
+    info: '&fHas recibido una solicitud de intercambio de &a%player%&f.'
+    accept:
+      message: '&a&l[ACEPTAR]'
+      hover: '&7▲ ¡ Click para aceptar el intercambio!'
+    deny:
+      message: '&c&l[RECHAZAR]'
+      hover: '&7▲ ¡ Click para rechazar el intercambio!'
+  no-request: '&c✘ &fNo tienes una solicitud de intercambio activa de &c%player%&f.'
+  deny-sender: '&c✘ &f%player% rechazó tu solicitud de intercambio.'
+  deny-receiver: '&fRechazaste la solicitud de intercambio de &c%player%&f.'
+  cant-trade-self: '&c✘ &fNo puedes enviarte una solicitud de intercambio a ti mismo.'
+  already-in-trade: '&c✘ &fEse jugador ya está realizando otro intercambio.'
+  already-sent: '&e⚠ &fYa enviaste recientemente una solicitud a &e%player%&f.'
+  too-far: '&c✘ &fEstás demasiado lejos de &c%player% &fpara enviarle una solicitud.'
+  not-accepting: '&c✘ &fEse jugador no está aceptando solicitudes de intercambio.'
+  disallowed-gamemode: '&c✘ &fTú o el otro jugador están en un modo de juego donde los intercambios están desactivados.'
+  same-ip: '&c✘ &fNo puedes intercambiar con una cuenta que utiliza la misma IP.'
+  below-required-amount: '&c✘ &fDebes ofrecer al menos &c%amount% %currency%&f.'
+  blacklisted-world: '&c✘ &fLos intercambios están desactivados en este mundo.'
+  expired: '&e⚠ &fTu solicitud de intercambio a &e%player% &fha expirado.'
+  disabled-trading: '&e⚠ &fTienes los intercambios desactivados. Usa &a/trade toggle &fpara activarlos.'
+
+# Debe mantenerse en 4 líneas. La primera línea debe quedar vacía.
+currency-editor-sign:
+- ''
+- '-----------'
+- 'Escribe la cantidad'
+- 'en la primera línea'
+
+# set to "" to disable
+sounds:
+  started: entity.player.levelup
+  completed: entity.player.levelup
+  aborted: block.anvil.destroy
+  deny: block.anvil.land
+  requested: entity.experience_bottle.throw
+  accept: ui.button.click
+  countdown: ui.button.click
+  cancel: ui.button.click
+
+# Se pueden usar en el título como %own-status% y %partner-status%
+placeholders:
+  ready: Confirmado
+  waiting: Esperando
+
+commands:
+  invalid-value: '&c✘ &fParámetro inválido: &c%value%'
+  invalid-command: '&c✘ &fComando o subcomando inválido.'
+  missing-argument: '&c✘ &fFalta un argumento. Debes indicar un valor para &c%value%&f.'
+  no-permission: '&c✘ &fNo tienes permiso para usar este comando.'
+  out-of-range: '&c✘ &fEl número &c%number% &fdebe estar entre &c%min% &fy &c%max%&f.'
+  player-only: '&c✘ &fDebes ser un jugador para usar este comando.'
+  invalid-player: '&c✘ &fNo se encontró al jugador &c%player%&f.'
+  invalid-selector: '&c✘ &fNo puedes usar este selector en este comando.'
+
+update-notifier: '&e⚠ &fHay una nueva versión de AxTrade disponible. &7(Actual: &c%current% &7| Nueva: &a%latest%&7)'
+safety: '&c✘ &fEsta función fue desactivada por seguridad. Actualiza AxTrade o contacta a un administrador.'
+
+# do not change this
+version: 9
